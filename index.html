@@ -7,7 +7,6 @@
 </head>
 
 <body>
-
   <header>
     <div>
     <figure style="width:80px;height:80px;" ><img style="max-width:100%;" src="logo2.png"></figure>
@@ -50,21 +49,21 @@
           <figure class="figureYY"><img src="menu_cake.png"></figure>
         </div>
       </div>
-         <div class="article" id="access">
+      <div class="article" id="access">
         <h2>アクセス</h2>
         <p>〒000-0000 東京都港区乃木坂1-2-3</p>
         <p>TEL: 00-0000-0000</p>
         <div class="fig">
-         <figure class="figureYY"><img src="mise.png"></figure>
-         <figure class="figureYY"><img style="height:100%;" src="map.bmp"></figure>
+          <figure class="figureYY"><img src="mise.png"></figure>
+          <figure class="figureYY"><img style="height:100%;" src="map.bmp"></figure>
         </div>
       </div>
     </div>
   </div>
-
-<footer>
-  <h2>© 2026 NOGIZAKA</h2>
-</footer>
+  <footer>
+    <h2>© 2026 NOGIZAKA</h2>
+  </footer>
+</body>
 
 <script>
  let A01 = document.getElementById("about");
@@ -75,24 +74,22 @@
  let B02 = document.getElementById("btn_menu");
  let B03 = document.getElementById("btn_access");
  
- B01.addEventListener("click",function() {
+  B01.addEventListener("click",function() {
   A01.style.display="block";
   A02.style.display="none";
   A03.style.display="none";
- });
- B02.addEventListener("click",function() {
+  });
+  B02.addEventListener("click",function() {
    A01.style.display="none";
    A02.style.display="block";
    A03.style.display="none";
- });
- B03.addEventListener("click",function() {
+  });
+  B03.addEventListener("click",function() {
    A01.style.display="none";
    A02.style.display="none";
    A03.style.display="block";
- });
+  });
 </script>
-
-</body>
 
 
 <style>
@@ -114,7 +111,7 @@
       display:flex;            /*　header内の子要素を横並びにする　*/
     }
     body footer {
-      position:static;
+      position:sticky; bottom:0;
       display:flex;            /*　header内の子要素を横並びにする　*/
     }
     body #contents {
@@ -122,7 +119,9 @@
       flex-direction:row;
     }
     body #contents #nav {
-      display:block;
+     position: sticky;
+     top: 140px;
+     display:block;
       /* flex-direction: column;  子要素を縦に並べる　 */
     }
     body #contents #scroll {
@@ -137,35 +136,23 @@
       overflow:hidden;
     }
     body {
+      width:100%; max-width:1900px;
       color:var(--black);
       background-color:var(--beige);     
       font-family: -apple-system, BlinkMacSystemFont, 'Hiragino Kaku Gothic ProN', sans-serif;
       line-height:1.7;
     }
-    body header {
-      width:100%; /* min-width:1800px; */
+    body header,footer {
+      width:100%; max-width:1600px; margin:auto;
       min-height:100px;
-      margin-bottom:20px;
+      box-sizing: border-box;
       border:solid 1px var(--red);
       background-color:var(--green);
       color:var(--yellow);
     }
-    body footer {
-      width:100%; /* min-width:1800px; */
-      min-height:100px;
-      margin-bottom:20px;
-      padding-left:300px;
-      border:solid 1px var(--red);
-      background-color:var(--green);
-      color:var(--yellow);
-      text-align:center;
-    }
-    body footer div{
-      font-size:clamp(0.1rem,2vw,1rem);
-    }
-
+   
     body #contents {
-      width:100%; max-width:1800px; margin:auto;
+      width:100%; max-width:1600px; margin:auto;
       min-height:1120px;
       border:solid 1px var(--red);
     }
