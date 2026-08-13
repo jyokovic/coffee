@@ -11,22 +11,19 @@
     <div>
     <figure style="width:80px;height:80px;" ><img style="max-width:100%;" src="logo2.png"></figure>
     </div>
-    <div>
-      <h1>喫茶店-NOGIZAKA KISSA</h1>
-      <p>乃木坂にあるおしゃれな喫茶店</p>
-    </div>
+    <h1>喫茶店-NOGIZAKA KISSA</h1>
+    <p><br>　　　　　　＊乃木坂にあるおしゃれな喫茶店＊</p>
   </header>
 
-  <div id="contents">
-    <div id="nav">
+  <div id="nav">
       <!-- <a href="#about" id="lin01"><h2 style="color:#2b3064;">店舗紹介</h2></a>
       <a href="#menu" id="lin02"><h2 style="color:#2b3064;" >メニュー</h2></a>
       <a href="#access" id="lin03"><h2 style="color:#2b3064;">アクセス</h2></a> -->
       <button id="btn_about"> 店舗紹介 </button>
       <button id="btn_menu"> メニュー </button>
       <button id="btn_access"> アクセス </button>
-    </div>
-    <div id="scroll">
+  </div>
+  <div id="scroll">
       <div class="article" id="about">
         <h2>店舗紹介</h2>
         <p>厳選したコーヒー豆を丁寧に自家焙煎、サイフォンでドリップ。落ち着きある静かな空間。</p>
@@ -58,7 +55,6 @@
           <figure class="figureYY"><img style="height:100%;" src="map.bmp"></figure>
         </div>
       </div>
-    </div>
   </div>
   <footer>
     <h2>© 2026 NOGIZAKA</h2>
@@ -103,94 +99,85 @@
       --green2:#abb5ab;
     }
 
-    body {
-      display:block;
-    }
     body header {
-      position:sticky; top:0;
-      display:flex;            /*　header内の子要素を横並びにする　*/
+      position:fixed; top:0; left:0;
+      width:100%; height:120px;
+      box-sizing: border-box; 
     }
     body footer {
-      position:sticky; bottom:0;
-      display:flex;            /*　header内の子要素を横並びにする　*/
+      position:fixed; bottom:0; left:0;
+      width:100%; height:110px;
+      box-sizing: border-box;
+     }
+    body #nav {
+      position: fixed; top: 120px; bottom: 110px; left:0;
+      width:130px;
+      /* height:100%; ここはあえて指定しない*/
+      box-sizing: border-box;
     }
-    body #contents {
-      display:flex;
-      flex-direction:row;
+    body #scroll {
+      position: fixed; top:120px; bottom:110px; left:130px; right:0;
+      overflow-y:auto;
+      overflow-x:hidden;
     }
-    body #contents #nav {
-     position: sticky;
-     top: 140px;
-     display:block;
-      /* flex-direction: column;  子要素を縦に並べる　 */
-    }
-    body #contents #scroll {
-      display:block;
-      overflow:auto;
-    }
-    body #contents #scroll .article .fig {
-      border:solid 1px var(--red);
-      display:flex;          /*　fig内の子要素を横並びにする　*/
-      flex-direction:row;
-      flex-wrap:wrap;
-      overflow:hidden;
-    }
+    
     body {
-      width:100%; max-width:1900px;
+      display:block;
       color:var(--black);
       background-color:var(--beige);     
       font-family: -apple-system, BlinkMacSystemFont, 'Hiragino Kaku Gothic ProN', sans-serif;
       line-height:1.7;
     }
     body header,footer {
-      width:100%; max-width:1600px; margin:auto;
-      min-height:100px;
-      box-sizing: border-box;
-      border:solid 1px var(--red);
+      display:flex;            /*　内の子要素を横並びにする　*/
       background-color:var(--green);
+      /* border:solid 1px var(--red); */
       color:var(--yellow);
+      padding-left:150px;
     }
-   
-    body #contents {
-      width:100%; max-width:1600px; margin:auto;
-      min-height:1120px;
-      border:solid 1px var(--red);
-    }
-    body #contents #nav {
-      width:150px;
-      height:1000px;
+      
+    body #nav {
+      display:flex;
+      flex-direction:column;
+      align-items:center;
       background-color:var(--green2);
-      border:solid 1px var(--red);
-      z-index:1000;
       text-decoration:underline;
       font-size:0.9em;
       font-weight:bold;
-    }
-    body #contents #nav button {
-      width:120px;
-      height:100px;
+      /* border:solid 1px var(--red); */
+          }
+    body #nav button {
+      width:110px;
+      height:80px;
       margin-top:100px;
-      margin-left:auto;
-      margin-right:auto;
       color:#0f1409;
       background-color:#eaece6;
       font-size:0.9em;
       font-weight:bold;
      }
-    body #contents #nav button:hover {
+    body #nav button:hover {
       background-color:#c37488;
      }
-    body #contents #scroll {
+    body #scroll {
+      display:block;
       color:#11391d;
-      border:solid 1px var(--red);
+      /* border:solid 1px var(--red); */
     }
-    body #contents #scroll .article {
+    body #scroll .article {
       background:var(--white);
-      padding:12px;
-      border-radius:12px;
+      padding:12px;      
       border:solid 1px var(--red);
+      border-radius:5px;
       text-align:center;
       font-size:0.9em;
+    }
+    body #scroll .article .fig {
+      display:flex;          /*　fig内の子要素を横並びにする　*/
+      flex-direction:row;
+      flex-wrap:wrap;
+      overflow:hidden;
+      border:solid 1px var(--red);
+      border-radius:15px;
     }
     /*大きい横長画像*/
     .figureYY{      display:block;      width:560px;      height:448px;    }
@@ -212,22 +199,18 @@
       width:100%;
       height:100px;
       margin-left: 10px;
-      }
-      body #contents {
-      display: block;
-      width:100%;
-      }
-      body #contents #nav {
+      }   
+      body #nav {
       display:flex;
       flex-direction: row; /* 子要素を横に並べる　*/
       width:100%;
       height:200px;
       }
-      body #contents #nav button {
+      body #nav button {
       width:80px;
       height:80px;
       }
-      body #contents #scroll {
+      body #scroll {
       display: block;
       width:100%;
       height:2000px;
